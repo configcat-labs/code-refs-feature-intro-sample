@@ -1,0 +1,15 @@
+{
+  "name": "code-refs-feature-intro-sample",
+  "version": "1.0.0",
+  "description": "An introductory guide on using ConfigCat's code references feature.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chavez Harris",
+  "license": "ISC",
+  "dependencies": {
+    "configcat-node": "^9.1.1"
+  }
+}

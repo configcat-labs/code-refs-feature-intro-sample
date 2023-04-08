@@ -6,7 +6,6 @@ const suggestRandomMovieToUser = require('./functions');
 // Create the ConfigCat client with your SDK Key
 const configCatClient = configcat.getClient("YOUR-CONFIGCAT-SDK");
 
-
 async function greetUser(firstName, lastName, title) {
   const formallygreetuser = await configCatClient.getValueAsync("formallygreetuser", false);
   if (formallygreetuser) {

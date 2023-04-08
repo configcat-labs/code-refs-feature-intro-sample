@@ -1,15 +1,25 @@
+// Import package
 const configcat = require("configcat-node");
 
-// Create configcat client
+const suggestRandomMovieToUser = require('./functions');
 
-function suggestMoviesToUser() {
-  // TODO: Implement
+// Create the ConfigCat client with your SDK Key
+const configCatClient = configcat.getClient("YOUR-CONFIGCAT-SDK");
+
+
+async function greetUser(firstName, lastName, title) {
+  const formallygreetuser = await configCatClient.getValueAsync("formallygreetuser", false);
+  if (formallygreetuser) {
+    return `Hello ${title} ${lastName}`;
+  } else {
+    return `Hey ${firstName}`;
+  }
 }
 
-function greetUser() {
-  // TODO: Implement
+async function main() {
+  const greetingMessage = await greetUser('Chavez', 'Harris', 'Mr.');
+  const randomMovie = await suggestRandomMovieToUser(configCatClient);
+  console.log(`${greetingMessage}. Your random movie pick: ${randomMovie}`);
 }
 
-function main() {
-
-}
+main();

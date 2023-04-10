@@ -7,7 +7,7 @@ const suggestRandomMovieToUser = require('./functions');
 const configCatClient = configcat.getClient("YOUR-CONFIGCAT-SDK");
 
 async function greetUser(firstName, lastName, title) {
-  const formallygreetuser = await configCatClient.getValueAsync("formallygreetuser", false);
+  const formallygreetuser = await configCatClient.getValueAsync("ADD-YOUR-FF-KEY-HERE", false);
   if (formallygreetuser) {
     return `Hello ${title} ${lastName}`;
   } else {

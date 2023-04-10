@@ -7,7 +7,7 @@ const listOfMovies = [
 ]
 
 async function suggestRandomMovieToUser(configCatClient) {
-  const suggestrandommovie = await configCatClient.getValueAsync("suggestrandommovie", false);
+  const suggestrandommovie = await configCatClient.getValueAsync("ADD-YOUR-FF-KEY-HERE", false);
 
   if (suggestrandommovie) {
     return listOfMovies[Math.floor(Math.random()*listOfMovies.length)];
@@ -15,6 +15,5 @@ async function suggestRandomMovieToUser(configCatClient) {
     return 'Your random movie pick is not available today.'
   }
 }
-
 
 module.exports = suggestRandomMovieToUser;
